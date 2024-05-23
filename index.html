@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mamba&reg;: Vision Mamba ALSO Needs Registers</title>
+
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./resources/icon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Mamba<sup>&reg;</sup>: Vision Mamba ALSO Needs Registers</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <span>Feng Wang</a></span><sup>1</sup>,</span>
+            <span class="author-block">
+              <span>Jiahao Wang</a></span><sup>1</sup>,</span>
+            <span class="author-block">
+              <span>Sucheng Ren</a></span><sup>1</sup>,</span>
+            </span>
+            <span class="author-block">
+              <span>Guoyizhe Wei</a></span><sup>1</sup>,</span>
+            </span>
+            <span class="author-block">
+              <span>Jieru Mei</a></span><sup>1</sup>,</span>
+            </span>
+            <span class="author-block">
+              <span>Wei Shao</a></span><sup>2</sup>,</span>
+            </span>
+            <span class="author-block">
+              <span>Yuyin Zhou</a></span><sup>3</sup>,</span>
+            </span>
+            <span class="author-block">
+              <span>Alan Yuille</a></span><sup>1</sup>,</span>
+            </span>
+            <span class="author-block">
+              <span>Cihang Xie</a></span><sup>3</sup>,</span>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <span><sup>1</sup>Johns Hopkins University</a></span>,</span>
+            <span class="author-block">
+              <span><sup>2</sup>University of Florida</a></span>,</span>
+            <span class="author-block">
+              <span><sup>3</sup>UC, Santa Cruz</a></span>,</span>
+            <!-- <span class="author-block"><sup>3</sup>UC, Santa Cruz</span> -->
+            
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/abs/2404.09990"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fa-solidassasas fa-face-smiling-hands"></i>
+                    <img src="./resources/ar.svg" alt="img" style="width: 100%; height: 100%" /> 
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code will be available soon.</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="https://huggingface.co/datasets/UCSC-VLAA/HQ-Edit"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fa-solidasasa fa-face-smiling-hands"></i>
+                   <img src="./resources/hg.svg" alt="img" style="width: 100%; height: 100%" /> 
+                  </span>
+                   <span> Data</span>
+                  </a>
+                </span> -->
+                <!-- <span class="link-block">
+                  <a href="https://huggingface.co/spaces/LAOS-Y/HQEdit"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fa-solidassasas fa-face-smiling-hands"></i>
+                      <img src="./resources/gr.svg" alt="img" style="width: 100%; height: 100%" /> 
+                    </span>
+                    <span>Demo</span>
+                    </a>
+                  </span> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<br>
+
+<section class="hero teaser">
+  <div class="container">
+    <div class="hero-body">
+      <center><h2 class="title is-3">Framework of Mamba<sup>&reg;</sup></h2></center>
+      <center><img src="./resources/teaser.png" alt="alt text"
+                        style="width: 80%; object-fit: cover; max-width:80%;"></a></center>
+      <h2 class="subtitle has-text-centered">
+        We address Vision Mamba's artifact issues by evenly inserting input-independent register tokens into the input sequence. In the final layer, we concatenate the output of register tokens to form a global representation for final predictions.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<br>
+
+<section class="section">
+  <div class="container">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Similar to Vision Transformers, this paper identifies artifacts also present within the feature maps of Vision Mamba. These artifacts, corresponding to high-norm tokens emerging in low-information background areas of images, appear much more severe in Vision Mamba---they exist prevalently even with the tiny-sized model and activate extensively across background regions. To mitigate this issue, we follow the prior solution of introducing register tokens into Vision Mamba. To better cope with Mamba blocks' uni-directional inference paradigm, two key modifications are introduced: 1) evenly inserting registers throughout the input token sequence, and 2) recycling registers for final decision predictions. We term this new architecture  Mamba<sup>&reg;</sup>. Qualitative observations suggest, compared to vanilla Vision Mamba, Mamba<sup>&reg;</sup>'s feature maps appear cleaner and more focused on semantically meaningful regions. Quantitatively, Mamba<sup>&reg;</sup> attains stronger performance and scales better.  For example, on the ImageNet benchmark, our Mamba<sup>&reg;</sup>-B attains 82.9% accuracy, significantly outperforming Vim-B's 81.8%; furthermore, we provide the first successful scaling to the large model size (i.e., with 341M parameters), attaining a competitive accuracy of 83.2% (84.5% if finetuned with 384x384 inputs). Additional validation on the downstream semantic segmentation task also supports Mamba<sup>&reg;</sup>'s efficacy.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<br>
+
+<section class="hero teaser">
+  <div class="container">
+    <div class="hero-body">
+      <center><h2 class="title is-3">Massive artifacts in Vision Mamba</h2></center>
+      <center><img src="./resources/artifacts.png" alt="alt text"
+                        style="width: 80%; object-fit: cover; max-width:80%;"></a></center>
+      <h2 class="subtitle has-text-centered">
+        Feature maps of vanilla Vision Mamba (Vim) exhibits massive artifacts appear in its feature map, making it difficult to attend to visually meaningful content within the image. In contrast, our model exhibits much cleaner feature activations, showcasing the significant efficacy of our enhanced architectural design.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<br>
+
+<section class="hero teaser">
+  <div class="container">
+    <div class="hero-body">
+      <center><h2 class="title is-3">Feature maps for different registers</h2></center>
+      <center><img src="./resources/parts.png" alt="alt text"
+                        style="width: 80%; object-fit: cover; max-width:80%;"></a></center>
+      <h2 class="subtitle has-text-centered">
+        The registers sometimes can attend to different parts or semantics with an image. Similar to the multi-head self-attention mechanism, this property is not required but naturally emerges from training.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<br>
+
+<section class="hero teaser">
+  <div class="container">
+    <div class="hero-body">
+      <center><h2 class="title is-3">Artifacts correspond to hihg normalization</h2></center>
+      <center><img src="./resources/norm.png" alt="alt text"
+                        style="width: 80%; object-fit: cover; max-width:80%;"></a></center>
+      <h2 class="subtitle has-text-centered">
+        Distributions of normalization values of local outputs across different layers. It quantitatively shows that our Mamba<sup>&reg;</sup> effectively reduces the number of high-norm outliers.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Based on the following <a href="http://nerfies.github.io">template</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
