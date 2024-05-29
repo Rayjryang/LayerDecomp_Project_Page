@@ -58,14 +58,14 @@
           
           <!-- Equal contribution note -->
           <div class="equal-contribution-note">
-            <p>* Equal contribution</p>
+            <p>* equal contribution</p>
           </div>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <span><sup>1</sup>UC Santa Cruz</a></span>,</span>
             <span class="author-block">
-              <span><sup>2</sup>UC Berkeley</a></span>,</span>
+              <span><sup>2</sup>UC Berkeley</a></span></span>
             <!-- <span class="author-block"><sup>3</sup>UC, Santa Cruz</span> -->
             
           </div>
@@ -130,7 +130,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Similar to Vision Transformers, this paper identifies artifacts also present within the feature maps of Vision Mamba. These artifacts, corresponding to high-norm tokens emerging in low-information background areas of images, appear much more severe in Vision Mamba---they exist prevalently even with the tiny-sized model and activate extensively across background regions. To mitigate this issue, we follow the prior solution of introducing register tokens into Vision Mamba. To better cope with Mamba blocks' uni-directional inference paradigm, two key modifications are introduced: 1) evenly inserting registers throughout the input token sequence, and 2) recycling registers for final decision predictions. We term this new architecture  Mamba<sup>&reg;</sup>. Qualitative observations suggest, compared to vanilla Vision Mamba, Mamba<sup>&reg;</sup>'s feature maps appear cleaner and more focused on semantically meaningful regions. Quantitatively, Mamba<sup>&reg;</sup> attains stronger performance and scales better.  For example, on the ImageNet benchmark, our Mamba<sup>&reg;</sup>-B attains 82.9% accuracy, significantly outperforming Vim-B's 81.8%; furthermore, we provide the first successful scaling to the large model size (i.e., with 341M parameters), attaining a competitive accuracy of 83.2% (84.5% if finetuned with 384x384 inputs). Additional validation on the downstream semantic segmentation task also supports Mamba<sup>&reg;</sup>'s efficacy.
+            CRATE, a white-box transformer architecture designed to learn compressed and sparse representations, offers an intriguing alternative to standard vision transformers (ViTs) due to its inherent mathematical interpretability. Despite extensive investigations into the scaling behaviors of language and vision transformers, the scalability of CRATE remains an open question which this paper aims to address. Specifically, we propose CRATE-α, featuring strategic yet minimal modifications to the sparse coding block in the CRATE architecture design, and a light training recipe designed to improve the scalability of CRATE. Through extensive experiments, we demonstrate that CRATE-α can effectively scale with larger model sizes and datasets. For example, our CRATE-α-B substantially outperforms the prior best CRATE-B model accuracy on ImageNet classification by 3.7%, achieving an accuracy of 83.2%. Meanwhile, when scaling further, our CRATE-α-L obtains an ImageNet classification accuracy of 85.1%. More notably, these model performance improvements are achieved while preserving, and potentially even enhancing the interpretability of learned CRATE models, as we demonstrate through showing that the learned token representations of increasingly larger trained CRATE-α models yield increasingly higher-quality unsupervised object segmentation of images. The project page is https://github.com/UCSC-VLAA/CRATE-alpha.
           </p>
         </div>
       </div>
@@ -142,11 +142,11 @@
 <section class="hero teaser">
   <div class="container">
     <div class="hero-body">
-      <center><h2 class="title is-3">Massive artifacts in Vision Mamba</h2></center>
-      <center><img src="./resources/artifacts.png" alt="alt text"
+      <center><h2 class="title is-3">Comparison of CRATE, CRATE-α, and ViT </h2></center>
+      <center><img src="./resources/fig_1_crate_alpha.png" alt="alt text"
                         style="width: 80%; object-fit: cover; max-width:80%;"></a></center>
       <h2 class="subtitle has-text-centered">
-        Feature maps of vanilla Vision Mamba (Vim) exhibits massive artifacts appear in its feature map, making it difficult to attend to visually meaningful content within the image. In contrast, our model exhibits much cleaner feature activations, showcasing the significant efficacy of our enhanced architectural design.
+        <i>Left:</i> We demonstrate how modifications to the components enhance the performance of the <b>CRATE</b> model on ImageNet-1K. <i>Right:</i> We compare the FLOPs and accuracy on ImageNet-1K of our methods with ViT <a href="https://arxiv.org/abs/2010.11929">Dosovitskiy et al., 2020</a> and CRATE <a href="https://ma-lab-berkeley.github.io/CRATE/">Yu et al., 2023</a>. CRATE is trained only on ImageNet-1K, while <b>ours</b> and ViT are pre-trained on ImageNet-21K.
       </h2>
     </div>
   </div>
@@ -157,11 +157,13 @@
 <section class="hero teaser">
   <div class="container">
     <div class="hero-body">
-      <center><h2 class="title is-3">Feature maps for different registers</h2></center>
-      <center><img src="./resources/parts.png" alt="alt text"
+      <center><h2 class="title is-3">Visualize the Improvement of Semantic Interpretability of CRATE-α</h2></center>
+      <center><img src="./resources/figure_cutler_segmentation.png" alt="alt text"
                         style="width: 80%; object-fit: cover; max-width:80%;"></a></center>
       <h2 class="subtitle has-text-centered">
-        The registers sometimes can attend to different parts or semantics with an image. Similar to the multi-head self-attention mechanism, this property is not required but naturally emerges from training.
+        <strong>Visualization of segmentation on COCO val2017 <a href="https://arxiv.org/abs/1405.0312">Lin et al., 2014</a> with MaskCut <a href="https://arxiv.org/abs/2301.11320">Wang et al., 2023</a>.</strong>  
+        <em>Top row</em>: Supervised <strong>ours</strong> effectively identifies the main objects in the image. Compared with <strong>CRATE</strong> (<em>Middle row</em>), <strong>ours</strong> achieves better segmentation performance in terms of boundary.
+        <em>Bottom row</em>: Supervised ViT fails to identify the main objects in most images.
       </h2>
     </div>
   </div>
