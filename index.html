@@ -150,7 +150,7 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
+        <div class="content has-text-left">
           <p>
             Recent advancements in large generative models, particularly diffusion-based methods, have significantly enhanced the capabilities of image editing. However, achieving precise control over image composition tasks remains a challenge.  Layered representations, which allow for independent editing of image components, are essential for user-driven content creation, yet existing approaches often struggle to decompose image into plausible layers with accurately retained transparent visual effects such as shadows and reflections. We propose <b>LayerDecomp</b>, a generative framework for image layer decomposition which outputs photorealistic clean backgrounds and high-quality transparent foregrounds with faithfully preserved visual effects. To enable effective training, we first introduce a dataset preparation pipeline that automatically scales up simulated multi-layer data with synthesized visual effects. To further enhance real-world applicability, we supplement this simulated dataset with camera-captured images containing natural visual effects.  Additionally, we propose a consistency loss which enforces the model to learn accurate representations for the transparent foreground layer when ground-truth annotations are not available. Our method achieves superior quality in layer decomposition, outperforming existing approaches in object removal and spatial editing tasks across several benchmarks and multiple user studies, unlocking various creative possibilities for layer-wise image editing. The project page is <b>https://rayjryang.github.io/LayerDecomp/</b>.
           </p>
@@ -167,7 +167,7 @@
       <center><h2 class="title is-3">The framework of LayerDecomp </h2></center>
       <center><img src="./resources/frame_work_5.png" alt="alt text"
                         style="width: 80%; object-fit: cover; max-width:80%;"></a></center>
-      <h2 class="subtitle has-text-centered">
+      <h2 class="subtitle has-text-left">
         <b>The framework of LayerDecomp.</b> The model takes four inputs: two conditional inputs, including a composite image and an object mask, and two noisy latent representations of the background and foreground layers. During training, we use simulated image triplets alongside camera-captured background-composite image pairs. We also introduce a pixel-space consistency loss to ensure that natural visual effects such as shadows and refelctions are faithfully preserved in the transparent foreground layer.
       </h2>
     </div>
@@ -197,8 +197,8 @@
       <center><h2 class="title is-3">Object removal - comparison with instruction-driven methods.</h2></center>
       <center><img src="./resources/remove_instruction1.png" alt="alt text"
                         style="width: 80%; object-fit: cover; max-width:80%;"></a></center>
-      <h2 class="subtitle has-text-centered">
-        <b>Object removal - comparison with instruction-driven methods.</b> Combining with a text-based grounding method, our model can effectively remove target objects and preserve background integrity, while existing instruction-based editing methods, such as Emu-Edit~\cite{sheynin2024emu}, MGIE~\cite{fu2024mgie}, and OmniGen~\cite{xiao2024omnigen}, may struggle to fully remove the target or maintain background consistency.
+      <h2 class="subtitle has-text-left">
+        <b>Object removal - comparison with instruction-driven methods.</b> Combining with a text-based grounding method, our model can effectively remove target objects and preserve background integrity, while existing instruction-based editing methods, such as Emu-Edit, MGIE, and OmniGen, may struggle to fully remove the target or maintain background consistency.
       </h2>
     </div>
   </div>
@@ -213,7 +213,7 @@
       <center><img src="./resources/spatial_edit.png" alt="alt text"
                         style="width: 80%; object-fit: cover; max-width:80%;"></a></center>
       <h2 class="subtitle has-text-centered">
-        <b>Object spatial editing.</b> Our model enables precise object moving and resizing with seamless handling of visual effects, resulting in highly effective and realistic edits that preserve content identity. When applied to examples released by specific works, such as DiffusionHandle~\cite{pandey2024diffusion} and DesignEdit~\cite{jia2024designedit}, our model also achieves satisfying results.
+        <b>Object spatial editing.</b> Our model enables precise object moving and resizing with seamless handling of visual effects, resulting in highly effective and realistic edits that preserve content identity. When applied to examples released by specific works, such as DiffusionHandle and DesignEdit, our model also achieves satisfying results.
       </h2>
     </div>
   </div>
@@ -226,7 +226,7 @@
       <center><h2 class="title is-3">Multi-layer Decomposition and Creative layer-editing</h2></center>
       <center><img src="./resources/creative_edit_v4.png" alt="alt text"
                         style="width: 80%; object-fit: cover; max-width:80%;"></a></center>
-      <h2 class="subtitle has-text-centered">
+      <h2 class="subtitle has-text-left">
         <b>Multi-layer Decomposition and Creative layer-editing.</b> By sequentially applying our model, we can decompose multiple foreground layers with distinct visual effects, which can then be used for further creative editing tasks.
       </h2>
     </div>
