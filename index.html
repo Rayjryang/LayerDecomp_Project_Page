@@ -133,7 +133,7 @@
   <div class="container">
     <div class="hero-body">
       <center><h2 class="title is-3">Overview of LayerDecomp</h2></center>
-      <center><img src="./resources/teaser_v2.pdf" alt="alt text"
+      <center><img src="./resources/teaser_v2.png" alt="alt text"
                         style="width: 80%; object-fit: cover; max-width:80%;"></a></center>
       <h2 class="subtitle has-text-centered">
         (a) Given an input image and a binary object mask, our model is able to decompose the image into a clean background layer and a transparent foreground layer with preserved visual effects such as shadows and reflections. (b) Subsequently, our decomposition empowers complex and controllable layer-wise editing such as spatial, color and/or style editing.
@@ -164,11 +164,11 @@
 <section class="hero teaser">
   <div class="container">
     <div class="hero-body">
-      <center><h2 class="title is-3">Comparison of CRATE, CRATE-α, and ViT </h2></center>
-      <center><img src="./resources/fig_1_crate_alpha.png" alt="alt text"
+      <center><h2 class="title is-3">The framework of LayerDecomp </h2></center>
+      <center><img src="./resources/frame_work_5.png" alt="alt text"
                         style="width: 80%; object-fit: cover; max-width:80%;"></a></center>
       <h2 class="subtitle has-text-centered">
-        <i>Left:</i> We demonstrate how modifications to the components enhance the performance of the <b>CRATE</b> model on ImageNet-1K. <i>Right:</i> We compare the FLOPs and accuracy on ImageNet-1K of our methods with ViT <a href="https://arxiv.org/abs/2010.11929">Dosovitskiy et al., 2020</a> and CRATE <a href="https://ma-lab-berkeley.github.io/CRATE/">Yu et al., 2023</a>. CRATE is trained only on ImageNet-1K, while <b>ours</b> and ViT are pre-trained on ImageNet-21K.
+        <b>The framework of LayerDecomp.</b> The model takes four inputs: two conditional inputs, including a composite image and an object mask, and two noisy latent representations of the background and foreground layers. During training, we use simulated image triplets alongside camera-captured background-composite image pairs. We also introduce a pixel-space consistency loss to ensure that natural visual effects such as shadows and refelctions are faithfully preserved in the transparent foreground layer.
       </h2>
     </div>
   </div>
@@ -179,17 +179,63 @@
 <section class="hero teaser">
   <div class="container">
     <div class="hero-body">
-      <center><h2 class="title is-3">Visualize the Improvement of Semantic Interpretability of CRATE-α</h2></center>
-      <center><img src="./resources/figure_cutler_segmentation.png" alt="alt text"
+      <center><h2 class="title is-3">Object removal - comparison with mask-based methods</h2></center>
+      <center><img src="./resources/remove_mask.png" alt="alt text"
                         style="width: 80%; object-fit: cover; max-width:80%;"></a></center>
       <h2 class="subtitle has-text-centered">
-        <strong>Visualization of segmentation on COCO val2017 <a href="https://arxiv.org/abs/1405.0312">Lin et al., 2014</a> with MaskCut <a href="https://arxiv.org/abs/2301.11320">Wang et al., 2023</a>.</strong>  
-        <em>Top row</em>: Supervised <strong>ours</strong> effectively identifies the main objects in the image. Compared with <strong>CRATE</strong> (<em>Middle row</em>), <strong>ours</strong> achieves better segmentation performance in terms of boundary.
-        <em>Bottom row</em>: Supervised ViT fails to identify the main objects in most images. We mark failed images with <img src="./resources/red_box.png" alt="Red Box" style="width: 0.25cm;">.
+        <b>Object removal - comparison with mask-based methods.</b> Our model, using tight input masks, generates more visually plausible results with fewer artifacts compared to ControlNet Inpainting, SD-XL Inpainting, and PowerPoint, which all require loose mask input. Besides, our model delivers coherent foreground layers and supports more advanced downstream editing tasks.
       </h2>
     </div>
   </div>
 </section>
+
+
+
+<section class="hero teaser">
+  <div class="container">
+    <div class="hero-body">
+      <center><h2 class="title is-3">Object removal - comparison with instruction-driven methods.</h2></center>
+      <center><img src="./resources/remove_instruction1.png" alt="alt text"
+                        style="width: 80%; object-fit: cover; max-width:80%;"></a></center>
+      <h2 class="subtitle has-text-centered">
+        <b>Object removal - comparison with instruction-driven methods.</b> Combining with a text-based grounding method, our model can effectively remove target objects and preserve background integrity, while existing instruction-based editing methods, such as Emu-Edit~\cite{sheynin2024emu}, MGIE~\cite{fu2024mgie}, and OmniGen~\cite{xiao2024omnigen}, may struggle to fully remove the target or maintain background consistency.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="hero teaser">
+  <div class="container">
+    <div class="hero-body">
+      <center><h2 class="title is-3">Object spatial editing</h2></center>
+      <center><img src="./resources/spatial_edit.png" alt="alt text"
+                        style="width: 80%; object-fit: cover; max-width:80%;"></a></center>
+      <h2 class="subtitle has-text-centered">
+        <b>Object spatial editing.</b> Our model enables precise object moving and resizing with seamless handling of visual effects, resulting in highly effective and realistic edits that preserve content identity. When applied to examples released by specific works, such as DiffusionHandle~\cite{pandey2024diffusion} and DesignEdit~\cite{jia2024designedit}, our model also achieves satisfying results.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero teaser">
+  <div class="container">
+    <div class="hero-body">
+      <center><h2 class="title is-3">Multi-layer Decomposition and Creative layer-editing</h2></center>
+      <center><img src="./resources/creative_edit_v4.png" alt="alt text"
+                        style="width: 80%; object-fit: cover; max-width:80%;"></a></center>
+      <h2 class="subtitle has-text-centered">
+        <b>Multi-layer Decomposition and Creative layer-editing.</b> By sequentially applying our model, we can decompose multiple foreground layers with distinct visual effects, which can then be used for further creative editing tasks.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+
+
 
 
 <br>
