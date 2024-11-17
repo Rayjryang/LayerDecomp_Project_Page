@@ -36,7 +36,7 @@
           <h1 class="title is-1 publication-title">Generative Image Layer Decomposition with Visual Effects</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <span>Jinrui Yang</a></span><sup>*1</sup>,</span>
+              <span>Jinrui Yang</a></span><sup>*1,2</sup>,</span>
             <span class="author-block">
               <span>Qing Liu</a></span><sup>2</sup>,</span>
             <span class="author-block">
@@ -52,16 +52,16 @@
               <span>Mengwei Ren</a></span><sup>2</sup>,</span>
             </span>
             <span class="author-block">
-              <span>Jianming Zhang</a></span><sup>2</sup></span>
+              <span>Jianming Zhang</a></span><sup>2</sup>,</span>
             </span>
             <span class="author-block">
-              <span>Zhe Lin</a></span><sup>2</sup></span>
+              <span>Zhe Lin</a></span><sup>2</sup>,</span>
             </span>
             <span class="author-block">
-              <span>Cihang Xie</a></span><sup>1</sup></span>
+              <span>Cihang Xie</a></span><sup>1</sup>,</span>
             </span>
             <span class="author-block">
-              <span>Yuyin Zhou</a></span><sup>1</sup></span>
+              <span>Yuyin Zhou</a></span><sup>1</sup>,</span>
             </span>
           </div>
           
@@ -93,7 +93,7 @@
                 </a>
               </span>
               <!-- Code Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="https://github.com/UCSC-VLAA/CRATE-alpha"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -101,10 +101,10 @@
                   </span>
                   <span>Code</span>
                   </a>
-              </span>
+              </span> -->
               
               <!-- Model Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="https://huggingface.co/UCSC-VLAA/CRATE-alpha/tree/main"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -113,7 +113,7 @@
                   </span>
                   <span>Model</span>
                   </a>
-              </span>
+              </span> -->
               
 
             </div>
@@ -132,12 +132,11 @@
 <section class="hero teaser">
   <div class="container">
     <div class="hero-body">
-      <center><h2 class="title is-3">Framework of CRATE-α</h2></center>
-      <center><img src="./resources/crate-alpha-arch.png" alt="alt text"
+      <center><h2 class="title is-3">Overview of LayerDecomp</h2></center>
+      <center><img src="./resources/teaser_v2.pdf" alt="alt text"
                         style="width: 80%; object-fit: cover; max-width:80%;"></a></center>
       <h2 class="subtitle has-text-centered">
-        One layer of the CRATE-α model architecture. 
-        <span class="math">MSSA</span> (<strong>M</strong>ulti-head <strong>S</strong>ubspace <strong>S</strong>elf-<strong>A</strong>ttention) represents the compression block, and <tt>ODL</tt> (<strong>O</strong>vercomplete <strong>D</strong>ictionary <strong>L</strong>earning) represents the sparse coding block.
+        (a) Given an input image and a binary object mask, our model is able to decompose the image into a clean background layer and a transparent foreground layer with preserved visual effects such as shadows and reflections. (b) Subsequently, our decomposition empowers complex and controllable layer-wise editing such as spatial, color and/or style editing.
       </h2>
     </div>
   </div>
@@ -153,7 +152,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            CRATE, a white-box transformer architecture designed to learn compressed and sparse representations, offers an intriguing alternative to standard vision transformers (ViTs) due to its inherent mathematical interpretability. Despite extensive investigations into the scaling behaviors of language and vision transformers, the scalability of CRATE remains an open question which this paper aims to address. Specifically, we propose CRATE-α, featuring strategic yet minimal modifications to the sparse coding block in the CRATE architecture design, and a light training recipe designed to improve the scalability of CRATE. Through extensive experiments, we demonstrate that CRATE-α can effectively scale with larger model sizes and datasets. For example, our CRATE-α-B substantially outperforms the prior best CRATE-B model accuracy on ImageNet classification by 3.7%, achieving an accuracy of 83.2%. Meanwhile, when scaling further, our CRATE-α-L obtains an ImageNet classification accuracy of 85.1%. More notably, these model performance improvements are achieved while preserving, and potentially even enhancing the interpretability of learned CRATE models, as we demonstrate through showing that the learned token representations of increasingly larger trained CRATE-α models yield increasingly higher-quality unsupervised object segmentation of images. The project page is https://rayjryang.github.io/CRATE-alpha/.
+            Recent advancements in large generative models, particularly diffusion-based methods, have significantly enhanced the capabilities of image editing. However, achieving precise control over image composition tasks remains a challenge.  Layered representations, which allow for independent editing of image components, are essential for user-driven content creation, yet existing approaches often struggle to decompose image into plausible layers with accurately retained transparent visual effects such as shadows and reflections. We propose <b>LayerDecomp</b>, a generative framework for image layer decomposition which outputs photorealistic clean backgrounds and high-quality transparent foregrounds with faithfully preserved visual effects. To enable effective training, we first introduce a dataset preparation pipeline that automatically scales up simulated multi-layer data with synthesized visual effects. To further enhance real-world applicability, we supplement this simulated dataset with camera-captured images containing natural visual effects.  Additionally, we propose a consistency loss which enforces the model to learn accurate representations for the transparent foreground layer when ground-truth annotations are not available. Our method achieves superior quality in layer decomposition, outperforming existing approaches in object removal and spatial editing tasks across several benchmarks and multiple user studies, unlocking various creative possibilities for layer-wise image editing. The project page is https://rayjryang.github.io/LayerDecomp/.
           </p>
         </div>
       </div>
